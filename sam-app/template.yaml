@@ -17,6 +17,10 @@ Resources:
       CodeUri: hello_world/
       Handler: app.lambda_handler
       Runtime: python3.8
+      Environment:
+        Variables:
+          TEST_VAR_1: If you see this, something went wrong...
+          TEST_VAR_2: Hello World 2 (template.yaml default value)
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

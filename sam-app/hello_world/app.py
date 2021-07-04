@@ -1,4 +1,12 @@
 import json
+import os
+
+TEST_VAR_1 = os.getenv(
+    "TEST_VAR_1", default="if you see this, something went wrong")
+TEST_VAR_2 = os.getenv(
+    "TEST_VAR_2", default="if you see this, somethign went wrong")
+TEST_VAR_3 = os.getenv(
+    "TEST_VAR_3", default='Hello world 3 (os.getenv default)')
 
 # import requests
 # import pandas
@@ -37,7 +45,10 @@ def lambda_handler(event, context):
     return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": "hello world from here 123123",
+            "message": "Hi there",
             # "location": ip.text.replace("\n", "")
+            "TEST_VAR_1": TEST_VAR_1,
+            "TEST_VAR_2": TEST_VAR_2,
+            "TEST_VAR_3": TEST_VAR_3,
         }),
     }

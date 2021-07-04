@@ -48,7 +48,9 @@ resource "aws_lambda_function" "example" {
 
   environment {
     variables = {
-      foo = "bar"
+      foo        = "bar"
+      TEST_VAR_1 = "hello world 1 (tf)"
+      TEST_VAR_2 = "hello world 2 (tf)"
     }
   }
 }
