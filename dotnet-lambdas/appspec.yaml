@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - bkDemo:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "bkDemo"
+        Alias: "bkDemoAlias"
+        CurrentVersion: "1"
+        TargetVersion: "2"

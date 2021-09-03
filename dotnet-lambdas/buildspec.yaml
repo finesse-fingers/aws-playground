@@ -1,19 +1,32 @@
 version: 0.2
 
+env:
+  variables:
+    SLS_DEBUG: 1
+
 phases:
   install:
+    runtime-versions:
+        nodejs: 14
+        dotnet: 3.1
     commands:
-      - sudo apt-get update
-      - sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-5.0
+      - echo Installing...
       - dotnet tool install -g Amazon.Lambda.Tools --framework netcoreapp3.1
+      - npm i serverless
   build:
     commands:
       - echo Building...
-      - ./build.sh
-    base-directory: dotnet-lambdas
+      - make build
+  post_build:
+    commands:
+      - echo Post-build...
+      - echo Running unit tests place holder...
+      - echo Running integration tests place holder...
+      - ./node_modules/.bin/serverless deploy --stage sandbox
 
 artifacts:
   files:
-    - './bin/Release/netcoreapp3.1/hello.zip'
-  name: dotnet-lambdas-demo-$(date +%Y-%m-%d) 
-  base-directory: dotnet-lambdas
+    - 'dotnet-lambdas/bin/Release/netcoreapp3.1/package.zip'
+    - 'dotnet-lambdas/appspec.yaml'
+  name: bk-dotnet-lambdas-artifact-demo-$(date +%Y-%m-%d)
+  discard-paths: yes
