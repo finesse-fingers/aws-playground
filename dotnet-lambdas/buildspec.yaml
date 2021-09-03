@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - sudo apt-get update
+      - sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-5.0
+      - dotnet tool install -g Amazon.Lambda.Tools --framework netcoreapp3.1
+  build:
+    commands:
+      - echo Building...
+      - ./build.sh
+    base-directory: dotnet-lambdas
+
+artifacts:
+  files:
+    - './bin/Release/netcoreapp3.1/hello.zip'
+  name: dotnet-lambdas-demo-$(date +%Y-%m-%d) 
+  base-directory: dotnet-lambdas
