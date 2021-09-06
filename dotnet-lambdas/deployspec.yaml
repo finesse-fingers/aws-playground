@@ -13,4 +13,5 @@ phases:
       - echo Installing...
       - dotnet tool install -g Amazon.Lambda.Tools --framework netcoreapp3.1
       - npm i serverless
+      - ls
       - ./node_modules/.bin/serverless deploy --stage sandbox

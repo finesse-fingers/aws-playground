@@ -30,4 +30,3 @@ artifacts:
     - 'dotnet-lambdas/deployspec.yaml'
     - 'serverless.yml'
   name: bk-dotnet-lambdas-artifact-demo-$(date +%Y-%m-%d)
-  discard-paths: yes
