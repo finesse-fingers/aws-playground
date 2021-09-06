@@ -12,7 +12,7 @@ phases:
     commands:
       - echo Installing...
       - dotnet tool install -g Amazon.Lambda.Tools --framework netcoreapp3.1
-      - npm i serverless
+      - npm ci
   build:
     commands:
       - echo Building...
