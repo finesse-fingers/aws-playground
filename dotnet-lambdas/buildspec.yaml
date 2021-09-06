@@ -28,5 +28,6 @@ artifacts:
     - 'dotnet-lambdas/bin/Release/netcoreapp3.1/package.zip'
     - 'dotnet-lambdas/appspec.yaml'
     - 'dotnet-lambdas/deployspec.yaml'
+    - 'serverless.yml'
   name: bk-dotnet-lambdas-artifact-demo-$(date +%Y-%m-%d)
   discard-paths: yes
