@@ -11,7 +11,7 @@ phases:
         dotnet: 3.1
     commands:
       - echo Installing...
-      - npm i serverless serverless-offline
+      - npm ci serverless serverless-offline
   post_build:
     commands:
       - ls
