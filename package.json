@@ -1,6 +1,17 @@
 {
+  "scripts": {
+    "start": "serverless offline",
+    "dev": "nodemon --exec serverless offline",
+    "invoke": "node invoke.js"
+  },
   "dependencies": {
-    "serverless": "^2.57.0",
-    "serverless-offline": "^8.0.0"
+    "serverless": "^3.0.1",
+    "serverless-offline": "^8.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "nodemonConfig": {
+    "ext": "py,js,yaml,yml"
   }
 }
