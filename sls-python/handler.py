@@ -8,11 +8,9 @@ def hello(event, context):
         "input": event
     }
 
-    print("received:", event)
-
     response = {
         "statusCode": 200,
-        "body": json.dumps(body)
+        "body": body
     }
 
     return response
